@@ -1,4 +1,4 @@
-# Reservasi Hotel
+# Aplikasi Reservasi Hotel
 Final project reservasi hotel
 
 Kelompok 3
