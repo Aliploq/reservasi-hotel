@@ -1,0 +1,566 @@
+/* ===== RESET DASAR ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-right: 2px solid rgba(255,255,255,0.2);
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 0;
+    flex: 1;
+    align-items: center;
+}
+
+.navbar-menu a {
+    color: rgba(255,255,255,0.8);
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar-menu a:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.navbar-menu a.active {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    border-bottom-color: #3498db;
+}
+
+.navbar-menu .logout-btn {
+    margin-left: auto;
+    background: #e74c3c;
+}
+
+.navbar-menu .logout-btn:hover {
+    background: #c0392b;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* ===== CARD (LOGIN & REGISTER) ===== */
+.card {
+    width: 100%;
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 28px;
+}
+
+.card input,
+.card select,
+.card button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.card input:focus,
+.card select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.card button {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+}
+
+.card button:hover {
+    background: linear-gradient(90deg, #2980b9, #1a5276);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.card a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: 500;
+}
+
+.card a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.dashboard h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.welcome-message {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.dashboard-shortcuts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.shortcut-card {
+    padding: 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.shortcut-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+.shortcut-card p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.shortcut-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.shortcut-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.shortcut-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.shortcut-info {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+/* ===== STATS GRID ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    padding: 25px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+    font-size: 36px;
+    margin: 0 0 10px 0;
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.stat-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stat-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.stat-danger {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.stat-warning {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* ===== CONTENT PAGE ===== */
+.content-page {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.content-page h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* ===== PAGE GRID ===== */
+.page-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 1024px) {
+    .page-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-section,
+.table-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-section h3,
+.table-section h3 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+/* ===== FORM ===== */
+.form-container {
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.booking-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form label {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    display: block;
+}
+
+.booking-form button {
+    width: 100%;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    padding: 12px;
+}
+
+.booking-form button:hover {
+    background: linear-gradient(90deg, #2980b9, #1a5276);
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary,
+.btn-confirm {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary:hover,
+.btn-confirm:hover {
+    background: linear-gradient(90deg, #2980b9, #1a5276);
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 13px;
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table.table-full {
+    width: 100%;
+}
+
+table th {
+    background: linear-gradient(90deg, #2c3e50, #3498db);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+table tr:hover {
+    background: #f8f9fa;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===== BADGES ===== */
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.badge-success {
+    background: #11998e;
+    color: white;
+}
+
+.badge-danger {
+    background: #f5576c;
+    color: white;
+}
+
+.badge-warning {
+    background: #fee140;
+    color: #333;
+}
+
+.badge-info {
+    background: #3498db;
+    color: white;
+}
+
+.text-muted {
+    color: #95a5a6;
+}
+
+/* ===== ALERTS ===== */
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 20px;
+    text-align: center;
+    border: 1px solid #f5c6cb;
+}
+
+.alert {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 6px;
+    border-left: 4px solid;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    border-color: #ffc107;
+    color: #856404;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* ===== PAYMENT METHODS ===== */
+.payment-methods {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.payment-methods label {
+    display: block;
+    margin: 12px 0;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.payment-methods label:hover {
+    background: #e8f4f8;
+}
+
+.payment-methods input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.payment-info {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.payment-info h3 {
+    text-align: left;
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.payment-info table {
+    width: 100%;
+    margin: 15px 0;
+    border-collapse: collapse;
+}
+
+.payment-info table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.payment-info table td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-wrap: wrap;
+    }
+
+    .navbar-menu a {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .dashboard-shortcuts,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+    }
+}
